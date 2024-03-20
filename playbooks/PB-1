@@ -1,0 +1,17 @@
+---
+- hosts: prod
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: iam installing java1.8.0
+      action: yum name=java-1.8.0 state=present
+
+    - name: iam installing maven
+      action: yum name=maven state=present
+
+    - name: iam install tree
+      action: yum name=tree state=present
+
+...
