@@ -1,0 +1,19 @@
+---
+- hosts: prod
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: iam installing java1.8.0
+      yum: name=java-1.8.0 state=present
+
+    - name: iam installing git
+      action: yum name=git state=present
+
+    - name: iam install tree
+      command: amazon-linux-extras install java-openjdk11 -y
+
+...
+
+we cant install any pacakges with yum or action at that we can use command module
