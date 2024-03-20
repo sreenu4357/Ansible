@@ -1,0 +1,24 @@
+•	yum install python-pip -y
+•	amazon-linux-extras install ansible2 -y
+•	useradd ansible
+•	passwd ansible
+•	visudo    > go to 100 line and (root ALL=ALL   ALL) copy the line and paste and changed to ansible ALL=(ALL)      NOPASSWD: ALL
+
+•	vi /etc/ssh/sshd_config   > go to 63 line password authentication no – change to yes 
+•	systemctl restart sshd
+•	cd /etc/ansible , ll vi ansible.config   > uncomment the inventory and sudouser
+•	vim hosts  > go to hosts file and put environment ip address [ dev] ipaddress [prod] ip address
+
+•	su - ansible  > switch to ansible user
+
+•	ssh-keygen > to connect the slave servers 
+•	ll -a
+•	cd .ssh
+•	ssh-copy-id ansible@172.31.80.179  > connect slave serve1 to master
+•	ssh-copy-id ansible@172.31.82.130
+•	ssh-copy-id ansible@172.31.94.115
+•	ssh-copy-id ansible@172.31.86.227
+•	ssh ansible@172.31.86.227   > login as slave server in master server
+•	ansible all -m ping  > to know the slave servers are connected to the master or not
+•	vim sreenu.yml   > playbook 
+•	ansible-playbook sreenu.yml  > to execute the playbook
