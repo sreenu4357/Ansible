@@ -22,3 +22,11 @@
 •	ansible all -m ping  > to know the slave servers are connected to the master or not
 •	vim sreenu.yml   > playbook 
 •	ansible-playbook sreenu.yml  > to execute the playbook
+
+day-2 
+
+ansible all -m ping
+ansible all --list-hosts
+ansible dev[1] --list-hosts -- to see the inventory ip address and perticular index serirs
+ansible prod[0] --list-hosts
+ansible-playbook sreenu.yml --extra-vars "abc=git"  -- variables we can pass in run time
