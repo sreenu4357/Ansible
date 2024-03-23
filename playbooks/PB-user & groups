@@ -1,0 +1,43 @@
+---
+- hosts: prod
+  connection: ssh
+
+  tasks:
+    - name: multi users adding
+      user: name={{item}} state=present
+      with_items:
+        - azure
+        - devops
+        - linux
+        - gcp
+
+
+---
+- hosts: prod
+  connection: ssh
+
+  tasks:
+    - name: user adding
+      user: name=sreenu state=present
+
+
+GROUPS
+
+---
+- hosts: prod
+  connection: ssh
+
+  tasks:
+    - name: multi gropus adding
+      group: name={{item}} state=present
+      with_items:
+        - bajaj
+        - rajeshgroup
+        - devin
+---
+- hosts: prod
+  connection: ssh
+
+  tasks:
+    - name: gropus adding
+      group: name=rajeshgroup state=present
