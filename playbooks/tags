@@ -1,0 +1,17 @@
+---
+- hosts: prod
+  connection: ssh
+
+  tasks:
+    - name: install git
+      yum: name=git state=present
+
+    - name: install tree
+      yum: name=tree state=present
+
+    - name: intall maven
+      yum: name=mvn state=present
+      tags: hcl
+
+
+command - ansible-playbook filename --skip-tags "tagvarible"
