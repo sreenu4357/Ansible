@@ -30,3 +30,14 @@ ansible all --list-hosts
 ansible dev[1] --list-hosts -- to see the inventory ip address and perticular index serirs
 ansible prod[0] --list-hosts
 ansible-playbook sreenu.yml --extra-vars "abc=git"  -- variables we can pass in run time
+
+day 3&4
+
+ansible-vault
+{create,decrypt,edit,view,encrypt,encrypt_string,rekey}
+ansible-vault create filename
+ansible-vault encrypt filename
+ansible-vault decrypt filename
+ansible-vault edit filename
+ansible-vault view filename 
+ansible-vault rekey filename  (password chanaging)
