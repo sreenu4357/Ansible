@@ -1,0 +1,28 @@
+---
+- hosts: prod
+  connection: ssh
+
+  tasks:
+    - debug:
+        msg: "welcome to sreenu world"
+
+
+---
+- hosts: prod
+  connection: ssh
+
+  tasks:
+    - debug:
+        msg: "slave server is working {{ansible_kernel}} os"
+
+
+    - debug:
+        msg: "slave server is working {{ansible_os_family}} os"
+
+
+    - debug:
+        msg: "slave server memory info is {{ansible_memory_mb}} os"
+
+
+    - debug:
+        msg: "slave server memory info is {{ansible_memory_mb.real.total}} os"
