@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: install vim-comman
+      raw: name=vim-common state=present
+
+
+
+if any package is not installed with (yum or action or command modules at that raw module will be used)
