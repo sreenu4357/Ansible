@@ -41,3 +41,19 @@ ansible-vault decrypt filename
 ansible-vault edit filename
 ansible-vault view filename 
 ansible-vault rekey filename  (password chanaging)
+
+ AD-hoc commands
+ansible prod -m "ll"
+  113  ansible prod -m "ls"
+  114  ansible prod -a "ls"
+  115  ansible prod -a "ll"
+  116  ansible prod -a "ls"
+  117  ansible prod -a "git -v"
+  118  ansible prod -a "tree"
+  119  ansible prod -a "yum install tree -y"
+  120  ansible prod -a "tree"
+  121  ansible prod -a "touch king"
+  122  ansible prod -a "df -h"
+  123  ansible -m yum -a "pkg=mvn state=present"
+  124  ansible prod -m yum -a "pkg=mvn state=present"
+  125  ansible prod -m yum -a "pkg=maven state=present"
