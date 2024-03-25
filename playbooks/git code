@@ -1,0 +1,25 @@
+private repo - play book
+
+---
+- hosts: prod
+  connection: ssh
+
+  tasks:
+    - name: git code grab into devsrver
+      git:
+        repo: "https://githubtokenkey@github.com/sreenu4357/gitrepo.git"
+        version: "main"
+        dest: "sreenu"
+
+public repo playbook
+
+---
+- hosts: prod
+  connection: ssh
+
+  tasks:
+    - name: git code grab into devsrver
+      git:
+        repo: "https://github.com/sreenu4357/tic-tac-toe-docker.git"
+        version: "master"
+        dest: "sreenu"
