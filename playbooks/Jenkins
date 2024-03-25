@@ -20,3 +20,28 @@
 
     - name: start jenkins
       service: name=jenkins state=started
+
+
+
+
+2 code no difference practice one 
+
+---
+- hosts: localhost
+
+  tasks:
+    - name: install java dependcy
+      command: amazon-linux-extras install java-openjdk11 -y
+    - name: jenkins repo
+      get_url:
+        url: "https://pkg.jenkins.io/redhat-stable/jenkins.repo"
+        dest: "/etc/yum.repos.d/jenkins.repo"
+    - name: rpm install
+      ansible.builtin.rpm_key:
+        key: "https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key"
+        state: present
+    - name: install jenkins
+      yum: name=jenkins state=present
+    - name: start service
+      service: name=jenkins state=started
+
